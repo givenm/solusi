@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/solusiuniversity">
+  <!--    
+        BN: This file will be used by tomcat to create a deployment xml for the war file created for this project.
+        See this on C:\Users\[home]\AppData\Roaming\NetBeans\7.3.1\apache-tomcat-7.0.34.0_base\conf\Catalina\localhost
+        
+        To use a single application as if it is duplicated for every client, create an new xml file that point to the single 
+        app war file on the docBase path and put the valve details for it (make sure that its access path is unique). 
+        Finally just place the xml file in the file $CATALINA_HOME\conf\Catalina\localhost\  and tomcat will auto deploy 
+        provided autoDeploy is set to true (see next comment).
+        
+        In order to allow auto-deployment using your just created deployment xml file, first make sure that the server Hot
+        autoDeploy property is set to true e.g. autoDeploy="true".
+        
+        To update the single app and apply for every virtual instance running, remove the single app jar and replace with the
+        newly updated one and RESTART TOMCAT. (Note: You might want to inform your app owners that you will perform maintenance lol)       
+        
+        NB: If the unpackWARs attribute is true in the server.xml, the web application archive file will be expanded to a directory of the same name 
+        (without the ".war" extension".)
+        Note: If you re-deploy an updated WAR file while Tomcat is stopped, be sure to delete the associated expanded directory before restarting Tomcat, so that the updated 
+        WAR file will be re-expanded when Tomcat restarts. (During development with Netbeans IDE for example, the IDE does all that for us but
+        on production, find a way to do this.)
+        
+        The following line will produce a log detail for any activity request received on the springdata app
+        Check more information on the log attributes and other Valve uses on http://localhost:[port]/docs/config/valve.html
+    -->
+  <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%T &quot;%r&quot; %s %b" prefix="solusiuniversity._log." suffix=".txt"/>
+</Context>
