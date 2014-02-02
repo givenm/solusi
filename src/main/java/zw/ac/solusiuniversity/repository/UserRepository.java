@@ -12,6 +12,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author given
  */
-public interface UserRepository extends MongoRepository<User, ObjectId>{
+public interface UserRepository extends MongoRepository<User, String>{
     public User findByUsername(String username);    
 }

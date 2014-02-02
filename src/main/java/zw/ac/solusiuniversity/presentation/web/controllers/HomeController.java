@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.ac.solusiuniversity.presentation.controllers;
+package zw.ac.solusiuniversity.presentation.web.controllers;
 
 import zw.ac.solusiuniversity.model.User;
 import zw.ac.solusiuniversity.repository.UserRepository;
@@ -56,7 +56,7 @@ public class HomeController {
             @RequestParam(value = "id") String id,
             Model model) {
 
-        userRepository.delete(new ObjectId(id));
+        userRepository.delete(new String(id));
         List<User> users = userService.readAll();
         model.addAttribute("users", users);
         return "redirect:home";
@@ -71,7 +71,7 @@ public class HomeController {
             Model model) {
         System.out.println("ID received: " + id);
         User user = new User();
-        user.setId(new ObjectId(id));
+        user.setId(id);
         user.setFirstname(firstname);
         user.setLastname(lastname);
         String msg = userService.updateUser(user);
