@@ -29,7 +29,7 @@ public class Person implements Serializable, Comparable<Person> {
     private Date dateOfBirth;
     private String gender;
     @DBRef
-    private Contact address;
+    private Contact contact;
     private boolean nationality;
     private String otherNationality;
     private boolean citizenship;

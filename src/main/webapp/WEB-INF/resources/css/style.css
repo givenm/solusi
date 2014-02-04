@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 4, 2014, 11:05:44 AM
+    Author     : given
+*/
+
+.form-column{
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+@media (max-width: 752px){
+    .form-column{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    .resize-form-control .form-control{
+        height: 56px;
+        padding-left: 3px;
+    }
+    
+    .drugLabel{
+        margin-left: 56px !important;
+    }
+}
+
+.section-master-heading{
+    text-align: center;
+}
+
+.section-child-heading{
+    height:52px;
+}
+
+.marital-status-radios-separator{
+    width: 39px;
+}
+
+.max-textarea{
+    max-height: 139px;
+}
