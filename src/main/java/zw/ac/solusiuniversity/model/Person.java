@@ -64,8 +64,5 @@ public class Person {
     private boolean agreedToConditions;
     private boolean swonTofInformation;
     private Date dateOfApplication;
-    
-    
-    
-    
+        
 }
