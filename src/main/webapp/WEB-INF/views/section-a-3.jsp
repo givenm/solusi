@@ -36,31 +36,22 @@
                 <div class="row">
                     <div class="col-md-4 form-column ">
                         <div class="form-group">
-                            <label for="contact.title">Title</label>
-                            <select class="form-control" id="contact.title" name="contact.title">
-                                <option></option>
-                                <option>Mr</option>
-                                <option>Miss</option>
-                                <option>Mrs</option>
-                                <option>Ms</option>
-                                <option>Dr</option>
-                                <option>Prof</option>
-                            </select>                            
+                            <label for="languageProficiency.english">Is English your first/native language?</label>
+                            <input type="checkbox" id="languageProficiency.english" name="languageProficiency.english"/>
                         </div>
-
                     </div>
 
                     <div class="col-md-4 form-column">
                         <div class="form-group">
-                            <label for="contact.name">Contact Name</label>
-                            <input type="text" class="form-control" id="contact.name" name="contact.name"/>
+                            <label for="languageProficiency.previousEducationInEnglish">Was your previous education undertaken in English?</label>
+                            <input type="checkbox" id="languageProficiency.previousEducationInEnglish" name="languageProficiency.previousEducationInEnglish"/>
                         </div>                        
                     </div>
 
                     <div class="col-md-4 form-column">
                         <div class="form-group">
-                            <label for="contact.cellNumber">Cell Number</label>
-                            <input type="text" class="form-control" id="contact.cellNumber" name="contact.cellNumber"/>
+                            <label for="languageProficiency.previousEducationLanguage">If NO please state the language through which you were educated</label>                            
+                            <input type="text" class="form-control" id="languageProficiency.previousEducationLanguage" name="languageProficiency.previousEducationLanguage"/>
                         </div> 
                     </div>
                 </div>
@@ -68,167 +59,68 @@
                 <div class="row">
                     <div class="col-md-4 form-column ">
                         <div class="form-group">
-                            <label for="contact.email">Email</label>
-                            <input type="text" class="form-control" id="contact.email" name="contact.email"/>
+                            <label for="languageProficiency.firstSpockenLanguage">Please state your first spoken language</label>
+                            <input type="text" class="form-control" id="languageProficiency.firstSpockenLanguage" name="languageProficiency.firstSpockenLanguage"/>
                         </div>  
-                    </div>
-
-                    <div class="col-md-4 form-column">
-                        <div class="form-group">
-                            <label for="contact.telephone">Telephone</label>
-                            <input type="text" class="form-control" id="contact.telephone" name="contact.telephone"/>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 form-column ">
-                        <div class="form-group">
-                            <label for="contact.houseNumber">House Number</label>
-                            <input type="text" class="form-control" id="contact.houseNumber" name="contact.houseNumber"/>
-                        </div>  
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4 form-column">
-                        <div class="form-group">
-                            <label for="contact.street">Street</label>
-                            <input type="text" class="form-control" id="contact.street" name="contact.street"/>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 form-column">
-                        <div class="form-group">
-                            <label for="town">Town</label>
-                            <input type="text" class="form-control" id="contact.town" name="contact.town"/>
-                        </div> 
-                    </div>
-
-                    <div class="col-md-4 form-column ">
-                        <div class="form-group">
-                            <label for="contact.country">Country</label>
-                            <input type="text" class="form-control" id="contact.country" name="contact.country"/>
-                        </div>  
-                    </div>
+                    </div>             
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4 class="text-primary section-child-heading">Contact in case of emergency</h4>
+                        <h4 class="text-primary section-child-heading">Previous Solusi University Training</h4>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-4 form-column">
                         <div class="form-group">
-                            <label for="emergencyContact.name">Name</label>
-                            <input type="text" class="form-control" id="emergencyContact.name" name="emergencyContact.name"/>
+                            <label for="languageProficiency.attendedBefore">Have you attended Solusi University before?</label>
+                            <input type="checkbox" id="languageProficiency.attendedBefore" name="languageProficiency.attendedBefore"/>
                         </div>
-                        <div class="form-group">
-                            <label for="emergencyContact.relationship">Relationship to you</label>
-                            <input type="text" class="form-control" id="emergencyContact.relationship" name="emergencyContact.relationship"/>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 form-column">
-                        <div class="form-group">
-                            <label for="emergencyContact.telephoneNumber">Telephone Number</label>
-                            <input type="text" class="form-control" id="emergencyContact.telephoneNumber" name="emergencyContact.telephoneNumber"/>
-                        </div>
-                    </div>
-
+                    </div> 
                     <div class="col-md-4 form-column ">
                         <div class="form-group">
-                            <label for="emergencyContact.address">Address</label>
-                            <textarea rows="5" class="form-control max-textarea" id="emergencyContact.address" name="emergencyContact.address"></textarea>
+                            <label for="languageProficiency.previousTrainingTypes[].trainingName">If Yes, please specify type of training and Dates:</label>                            
+                        </div>  
+                    </div>
+                    <div class="col-md-4 form-column ">
+                        <div class="form-group">
+                            <label for="languageProficiency.previousTrainingTypes[].trainingName">Training</label> 
+                            <input type="text" class="form-control" id="languageProficiency.previousTrainingTypes[].trainingName" name="languageProficiency.previousTrainingTypes[].trainingName"/>                            
                         </div>  
                     </div>
                 </div>
 
-                <div class="row" style="margin-top: 38px;">
+                <div class="row">    
+
                     <div class="col-md-4 form-column">
                         <div class="form-group">
-                            <label for="nationality">Are you a Zimbabwean national?</label>
-                            <input type="checkbox" style="margin-bottom: 37px; margin-left: 20px;" id="nationality" name="nationality"/>
+                            <label for="languageProficiency.previousTrainingTypes[].studyStatus">Full Time Attendance?</label>
+                            <input type="checkbox" id="languageProficiency.previousTrainingTypes[].studyStatus" name="languageProficiency.previousTrainingTypes[].studyStatus"/>
                         </div>                        
                     </div>
 
                     <div class="col-md-4 form-column">
-                        <div class="form-group ">
-                            <label for="otherNationality">If NOT Zimbabwean, what is your nationality?</label>
-                            <input type="text" class="form-control" id="otherNationality" name="otherNationality"/>
-                        </div>
-                    </div>                    
-
-                </div>
-
-                <div class="row" style="margin-top: 38px;">
-                    <div class="col-md-4 form-column">
                         <div class="form-group">
-                            <label for="citizenship">Do you hold Zimbabwean Citizenship?</label>
-                            <input type="checkbox" style="margin-bottom: 37px; margin-left: 20px;" id="citizenship" name="citizenship"/>
+                            <label for="languageProficiency.previousTrainingTypes[].startDate">Training Start Date</label>
+                            <input type="text" class="form-control" id="languageProficiency.previousTrainingTypes[].startDate" name="languageProficiency.previousTrainingTypes[].startDate"/>
                         </div>                        
                     </div>
 
                     <div class="col-md-4 form-column">
-                        <div class="form-group ">
-                            <label for="otherCitizenship">If NOT Zimbabwean Citizen, state your Citizenship</label>
-                            <input type="text" class="form-control" id="otherCitizenship" name="otherCitizenship"/>
-                        </div>
+                        <div class="form-group">
+                            <label for="languageProficiency.previousTrainingTypes[].endDate">Training End Date</label>                            
+                            <input type="text" class="form-control" id="languageProficiency.previousTrainingTypes[].endDate" name="languageProficiency.previousTrainingTypes[].endDate"/>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="row">                   
+                    <div class="col-md-6">
+                        <a href="<c:url value="/section-a-2" />" class="btn btn-primary pull-left">Previous</a>
                     </div>
 
-                </div>
-
-                <div class="row">
-                    <div class="col-md-8 form-column resize-form-control">
-                        <div class="form-group">
-                            <label for="drugUseOne[]">I have </label> 
-                            <div class="form-control">                                
-                                <input class="marital-status-radios-separator" type="radio" value="occasionally" name="drugUseOne[]"/> occasionally
-                                <input class="marital-status-radios-separator" type="radio" value="often" name="drugUseOne[]"/> often
-                                <input class="marital-status-radios-separator" type="radio" value="once" name="drugUseOne[]"/> once
-
-                                <input class="marital-status-radios-separator" type="radio" value="never" name="drugUseOne[]"/> never
-                                <label class="col-md-offset-1 drugLabel">used Alcohol</label>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-8 form-column resize-form-control">
-                        <div class="form-group">
-                            <label for="drugUseTwo[]">I have </label> 
-                            <div class="form-control">                                
-                                <input class="marital-status-radios-separator" type="radio" value="occasionally" name="drugUseTwo[]"/> occasionally
-                                <input class="marital-status-radios-separator" type="radio" value="often" name="drugUseTwo[]"/> often
-                                <input class="marital-status-radios-separator" type="radio" value="once" name="drugUseTwo[]"/> once
-
-                                <input class="marital-status-radios-separator" type="radio" value="never" name="drugUseTwo[]"/> never
-                                <label class="col-md-offset-1 drugLabel">used Tobacco</label>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-8 form-column resize-form-control">
-                        <div class="form-group">
-                            <label for="drugUseThree[]">I have </label> 
-                            <div class="form-control">                                
-                                <input class="marital-status-radios-separator" type="radio" value="occasionally" name="drugUseThree[]"/> occasionally
-                                <input class="marital-status-radios-separator" type="radio" value="often" name="drugUseThree[]"/> often
-                                <input class="marital-status-radios-separator" type="radio" value="once" name="drugUseThree[]"/> once
-                                <input class="marital-status-radios-separator" type="radio" value="never" name="drugUseThree[]"/> never
-                                <label class="col-md-offset-1 drugLabel">used other drugs</label>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-
-
-
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <button type="submit" class="btn btn-primary pull-right">Save and Next</button>
                     </div>
                 </div>

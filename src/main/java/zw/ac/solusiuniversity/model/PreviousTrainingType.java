@@ -19,6 +19,7 @@ public class PreviousTrainingType implements Serializable, Comparable<PreviousTr
 
     @Id
     private String id;
+    private String trainingName;
     private Date startDate;
     private Date endDate;
     private boolean studyStatus;
@@ -28,6 +29,7 @@ public class PreviousTrainingType implements Serializable, Comparable<PreviousTr
 
     private PreviousTrainingType(Builder builder) {
         this.id = builder.id;
+        this.trainingName = builder.trainingName;
         this.startDate = builder.startDate;
         this.endDate = builder.endDate;
         this.studyStatus = builder.studyStatus;
@@ -41,6 +43,7 @@ public class PreviousTrainingType implements Serializable, Comparable<PreviousTr
     public static class Builder {
 
         private String id;
+        private String trainingName;
         private final Date startDate;
         private Date endDate;
         private boolean studyStatus;
@@ -49,18 +52,23 @@ public class PreviousTrainingType implements Serializable, Comparable<PreviousTr
             this.startDate = value;
         }
 
-        public Builder id(String value) {
-            this.id = value;
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+        
+        public Builder trainingName(String trainingName) {
+            this.trainingName = trainingName;
             return this;
         }
 
-        public Builder endDate(Date value) {
-            this.endDate = value;
+        public Builder endDate(Date endDate) {
+            this.endDate = endDate;
             return this;
         }
 
-        public Builder studyStatus(boolean value) {
-            this.studyStatus = value;
+        public Builder studyStatus(boolean studyStatus) {
+            this.studyStatus = studyStatus;
             return this;
         }
 
@@ -78,6 +86,10 @@ public class PreviousTrainingType implements Serializable, Comparable<PreviousTr
 
     public String getId() {
         return id;
+    }
+    
+    public String trainingName() {
+        return trainingName;
     }
 
     public Date getStartDate() {

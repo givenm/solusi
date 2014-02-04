@@ -30,7 +30,7 @@ public class OnlineRegistration {
     @RequestMapping(value = {"/saveSectionAOne"})
     public String saveSectionAOne() { 
         
-        return "section-a-2";
+        return "redirect:section-a-2";
     }
     
     @RequestMapping(value = {"/section-a-2"})
@@ -41,7 +41,7 @@ public class OnlineRegistration {
     @RequestMapping(value = {"/saveSectionATwo"})
     public String saveSectionATwo() { 
         
-        return "section-a-3";
+        return "redirect:section-a-3";
     }
     
     @RequestMapping(value = {"/section-a-3"})

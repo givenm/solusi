@@ -193,7 +193,7 @@
                         </div>
                     </div>                    
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-8 form-column resize-form-control">
                         <div class="form-group">
@@ -209,7 +209,7 @@
                         </div>
                     </div>                    
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-8 form-column resize-form-control">
                         <div class="form-group">
@@ -225,10 +225,13 @@
                     </div>                    
                 </div>
 
-
-
                 <div class="row">
-                    <div class="col-md-12">
+                   
+                    <div class="col-md-6">
+                        <a href="<c:url value="/section-a-1" />" class="btn btn-primary pull-left">Previous</a>
+                    </div>
+                
+                    <div class="col-md-6">
                         <button type="submit" class="btn btn-primary pull-right">Save and Next</button>
                     </div>
                 </div>
