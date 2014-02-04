@@ -78,7 +78,7 @@ public class Person implements Serializable, Comparable<Person> {
         this.maritalStatus = builder.maritalStatus;
         this.dateOfBirth = builder.dateOfBirth;
         this.gender = builder.gender;
-        this.address = builder.address;
+        this.contact = builder.contact;
         this.nationality = builder.nationality;
         this.otherNationality = builder.otherNationality;
         this.citizenship = builder.citizenship;
@@ -119,7 +119,7 @@ public class Person implements Serializable, Comparable<Person> {
         private String maritalStatus;
         private Date dateOfBirth;
         private String gender;
-        private Contact address;
+        private Contact contact;
         private boolean nationality;
         private String otherNationality;
         private boolean citizenship;
@@ -179,8 +179,8 @@ public class Person implements Serializable, Comparable<Person> {
             return this;
         }
 
-        public Builder address(Contact value) {
-            this.address = value;
+        public Builder contact(Contact value) {
+            this.contact = value;
             return this;
         }
 
@@ -311,7 +311,7 @@ public class Person implements Serializable, Comparable<Person> {
             this.maritalStatus = person.getMaritalStatus();
             this.dateOfBirth = person.getDateOfBirth();
             this.gender = person.getGender();
-            this.address = person.getAddress();
+            this.contact = person.getContact();
             this.nationality = person.isNationality();
             this.otherNationality = person.getOtherNationality();
             this.citizenship = person.isCitizenship();
@@ -374,8 +374,8 @@ public class Person implements Serializable, Comparable<Person> {
         return gender;
     }
 
-    public Contact getAddress() {
-        return address;
+    public Contact getContact() {
+        return contact;
     }
 
     public boolean isNationality() {
