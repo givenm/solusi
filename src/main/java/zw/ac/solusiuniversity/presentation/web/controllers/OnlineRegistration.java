@@ -23,8 +23,30 @@ public class OnlineRegistration {
     private UserServiceCRUD userServiceCRUD;
 
     @RequestMapping(value = {"/section-a-1"})
-    public String home() {        
+    public String sectionAOne() {        
         return "section-a-1";
+    }
+    
+    @RequestMapping(value = {"/saveSectionAOne"})
+    public String saveSectionAOne() { 
+        
+        return "section-a-2";
+    }
+    
+    @RequestMapping(value = {"/section-a-2"})
+    public String sectionATwo() {        
+        return "section-a-2";
+    }
+    
+    @RequestMapping(value = {"/saveSectionATwo"})
+    public String saveSectionATwo() { 
+        
+        return "section-a-3";
+    }
+    
+    @RequestMapping(value = {"/section-a-3"})
+    public String sectionAThree() {        
+        return "section-a-3";
     }
 
 }
