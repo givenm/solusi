@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.ac.solusiuniversity.services.logic;
+package zw.ac.solusiuniversity.services.logic.user;
 
 import zw.ac.solusiuniversity.model.User;
 

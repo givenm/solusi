@@ -7,8 +7,8 @@ package zw.ac.solusiuniversity.presentation.web.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import zw.ac.solusiuniversity.services.crud.UserServiceCRUD;
-import zw.ac.solusiuniversity.services.logic.UserService;
+import zw.ac.solusiuniversity.services.crud.user.UserServiceCRUD;
+import zw.ac.solusiuniversity.services.logic.user.UserService;
 
 /**
  *

@@ -27,56 +27,55 @@ public class InitMongoService {
         mongoTemplate.dropCollection("user");
 
         // Create new records
-        Role adminRole = new Role();
-        adminRole.setRole(1);
-        adminRole.setRolename("Administrator");
+        Role adminRole = new Role.Builder("Administrator")
+                .role(1)
+                .build();
+        
+        Role userRole = new Role.Builder("User")
+                .role(2)
+                .build();
 
-        Role userRole = new Role();
-        userRole.setRole(2);
-        userRole.setRolename("User");
-
-        User john = new User();       
-        john.setFirstname("John");
-        john.setLastname("Smith");
-        john.setPassword("21232f297a57a5a743894a0e4a801fc3");
-        john.setRole(adminRole);
-        john.setUsername("john");
+        User john = new User.Builder("John")   
+                .lastname("Smith")
+                .password("21232f297a57a5a743894a0e4a801fc3")
+                .role(adminRole)
+                .username("john@gmail.com")
+                .build();
+        User given = new User.Builder("Given")   
+                .lastname("Nyauyanga")
+                .password("ff11cbb19052e40b07aac0ca060c23ee")
+                .role(userRole)
+                .username("given@conycto.com")
+                .build();
+      
+        User jane = new User.Builder("Jane")   
+                .lastname("Adams")
+                .password("ee11cbb19052e40b07aac0ca060c23ee")
+                .role(userRole)
+                .username("jane@conycto.com")
+                .build();
+      
+        User elison = new User.Builder("Elison")   
+                .lastname("Noraah")
+                .password("2266cbb19052e40b07aac0ca060c23ee")
+                .role(userRole)
+                .username("elison@conycto.com")
+                .build();
         
-        User given = new User();       
-        given.setFirstname("Given");
-        given.setLastname("Nyauyanga");
-        given.setPassword("ff11cbb19052e40b07aac0ca060c23ee");
-        given.setRole(userRole);
-        given.setUsername("given");
+        User laura = new User.Builder("Laura")   
+                .lastname("Allimont")
+                .password("ppoo88b19052e40b07aac0ca060c23ee")
+                .role(userRole)
+                .username("laura@gmail.com")
+                .build();
         
-        User jane = new User();       
-        jane.setFirstname("Jane");
-        jane.setLastname("Adams");
-        jane.setPassword("ee11cbb19052e40b07aac0ca060c23ee");
-        jane.setRole(userRole);
-        jane.setUsername("jane");  
+        User simon = new User.Builder("Simon")   
+                .lastname("Saya")
+                .password("2o69cbb19052e40b07aac0ca060c23ee")
+                .role(userRole)
+                .username("simon@gmail.com")
+                .build();
         
-        User elison = new User();       
-        elison.setFirstname("Elison");
-        elison.setLastname("Noraah");
-        elison.setPassword("2266cbb19052e40b07aac0ca060c23ee");
-        elison.setRole(userRole);
-        elison.setUsername("elison");
-        
-        User laura = new User();       
-        laura.setFirstname("Laura");
-        laura.setLastname("Allimont");
-        laura.setPassword("ppoo88b19052e40b07aac0ca060c23ee");
-        laura.setRole(userRole);
-        laura.setUsername("jane");  
-        
-        User simon = new User();       
-        simon.setFirstname("Simon");
-        simon.setLastname("Saya");
-        simon.setPassword("2o69cbb19052e40b07aac0ca060c23ee");
-        simon.setRole(userRole);
-        simon.setUsername("simon");
-
         // Insert to db
         mongoTemplate.insert(adminRole, "role");
         mongoTemplate.insert(userRole, "role");

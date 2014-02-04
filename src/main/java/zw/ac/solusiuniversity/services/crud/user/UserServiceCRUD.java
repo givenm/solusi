@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.ac.solusiuniversity.services.crud;
+package zw.ac.solusiuniversity.services.crud.user;
 
 import java.util.List;
 import zw.ac.solusiuniversity.model.User;

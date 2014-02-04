@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package zw.ac.solusiuniversity.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,11 +15,80 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author given
  */
 @Document
-class PreviousTrainingType {
+public class PreviousTrainingType implements Serializable, Comparable<PreviousTrainingType> {
+
     @Id
     private String id;
     private Date startDate;
     private Date endDate;
     private boolean studyStatus;
-    
+
+    private PreviousTrainingType() {
+    }
+
+    private PreviousTrainingType(Builder builder) {
+        this.id = builder.id;
+        this.startDate = builder.startDate;
+        this.endDate = builder.endDate;
+        this.studyStatus = builder.studyStatus;
+    }
+
+    @Override
+    public int compareTo(PreviousTrainingType o) {
+        return startDate.compareTo(o.startDate);
+    }
+
+    public static class Builder {
+
+        private String id;
+        private final Date startDate;
+        private Date endDate;
+        private boolean studyStatus;
+
+        public Builder(Date value) {
+            this.startDate = value;
+        }
+
+        public Builder id(String value) {
+            this.id = value;
+            return this;
+        }
+
+        public Builder endDate(Date value) {
+            this.endDate = value;
+            return this;
+        }
+
+        public Builder studyStatus(boolean value) {
+            this.studyStatus = value;
+            return this;
+        }
+
+        public Builder previousTrainingType(PreviousTrainingType previousTrainingType) {
+            this.id = previousTrainingType.getId();
+            this.endDate = previousTrainingType.getEndDate();
+            this.studyStatus = previousTrainingType.isStudyStatus();
+            return this;
+        }
+
+        public PreviousTrainingType build() {
+            return new PreviousTrainingType(this);
+        }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public boolean isStudyStatus() {
+        return studyStatus;
+    }
 }

@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package zw.ac.solusiuniversity.services.logic.Impl;
+package zw.ac.solusiuniversity.services.logic.user.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import zw.ac.solusiuniversity.model.User;
-import zw.ac.solusiuniversity.services.crud.UserServiceCRUD;
-import zw.ac.solusiuniversity.services.logic.UserService;
+import zw.ac.solusiuniversity.services.crud.user.UserServiceCRUD;
+import zw.ac.solusiuniversity.services.logic.user.UserService;
 
 /**
  *
@@ -28,10 +28,12 @@ public class UserServicImpl implements UserService{
             return "The user does not exist anymore.";
         }
         
-        existingUser.setFirstname(user.getFirstname());
-        existingUser.setLastname(user.getLastname());
+        User userUpdate = new User.Builder(user.getFirstname())
+                .user(user)
+                .lastname(user.getLastname())
+                .build();
         
-        userServiceCRUD.persist(existingUser);
+        userServiceCRUD.merge(userUpdate);
         return "Saved!" ;
     }
 }

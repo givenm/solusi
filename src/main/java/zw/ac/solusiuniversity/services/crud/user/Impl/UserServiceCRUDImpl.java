@@ -2,14 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.ac.solusiuniversity.services.crud.Impl;
+package zw.ac.solusiuniversity.services.crud.user.Impl;
 
 import zw.ac.solusiuniversity.model.User;
 import zw.ac.solusiuniversity.repository.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import zw.ac.solusiuniversity.services.crud.UserServiceCRUD;
+import zw.ac.solusiuniversity.services.crud.user.UserServiceCRUD;
 
 /**
  *

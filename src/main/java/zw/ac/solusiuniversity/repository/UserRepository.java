@@ -5,7 +5,6 @@
 package zw.ac.solusiuniversity.repository;
 
 import zw.ac.solusiuniversity.model.User;
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

@@ -39,7 +39,7 @@ public class Drug implements Serializable, Comparable<Drug> {
         return name.compareToIgnoreCase(o.name);
     }
 
-    private static class Builder {
+    public static class Builder {
 
         private String id;
         private String drugName;

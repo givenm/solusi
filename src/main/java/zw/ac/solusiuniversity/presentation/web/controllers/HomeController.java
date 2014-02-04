@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import zw.ac.solusiuniversity.services.crud.UserServiceCRUD;
-import zw.ac.solusiuniversity.services.logic.UserService;
+import zw.ac.solusiuniversity.services.crud.user.UserServiceCRUD;
+import zw.ac.solusiuniversity.services.logic.user.UserService;
 
 /**
  *
@@ -58,8 +58,9 @@ public class HomeController {
     public String deleteUser(
             @RequestParam(value = "id") String id,
             Model model) {
-        User userToDelete = new User();
-        userToDelete.setId(id);
+        User userToDelete = new User.Builder("")
+                .id(id)
+                .build();
         userServiceCRUD.delete(userToDelete); 
         List<User> users = userServiceCRUD.findAll(); 
         model.addAttribute("users", users);
@@ -74,10 +75,10 @@ public class HomeController {
             @RequestParam(value = "lastname") String lastname,
             Model model) {
         System.out.println("ID received: " + id);
-        User user = new User();
-        user.setId(id);
-        user.setFirstname(firstname);
-        user.setLastname(lastname);
+        User user = new User.Builder(firstname)
+                .id(id)
+                .lastname(lastname)
+                .build();
         String msg = userService.updateUser(user);
         System.out.println("Message: " + msg);
         return msg;
