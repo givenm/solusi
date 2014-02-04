@@ -46,5 +46,26 @@ public class Person {
     private ProposedStudy proposedStudy;
     @DBRef
     private AcademicResult academicResults;
+    @DBRef
+    private EmploymentHistory employmentHistory;
+    private boolean staffMember;
+    @DBRef
+    private AccomodationRequired accomodationRequired;
+    private String attendenceReason;
+    private String remarks;
+    @DBRef
+    private List<Spouse> spouses;
+    @DBRef
+    private List<Disability> disabilities;
+    @DBRef
+    private List<Referee> referees;
+    @DBRef
+    private List<Statistic> statistics;
+    private boolean agreedToConditions;
+    private boolean swonTofInformation;
+    private Date dateOfApplication;
+    
+    
+    
     
 }

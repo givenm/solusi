@@ -5,11 +5,7 @@
 package zw.ac.solusiuniversity.presentation.web.controllers;
 
 import zw.ac.solusiuniversity.model.User;
-import zw.ac.solusiuniversity.repository.UserRepository;
-import zw.ac.solusiuniversity.services.UserService;
-import com.mongodb.util.JSON;
 import java.util.List;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import zw.ac.solusiuniversity.services.crud.UserServiceCRUD;
+import zw.ac.solusiuniversity.services.logic.UserService;
 
 /**
  *
@@ -27,15 +25,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
     @Autowired
-    private UserService userService;
+    private UserService userService;    
     @Autowired
-    private UserRepository userRepository;
+    private UserServiceCRUD userServiceCRUD;
 
     @RequestMapping(value = {"/home", "/"})
-    public String home(Model model) {
-        List<User> users = userService.readAll();
-        model.addAttribute("users", users);
+    public String home() {        
         return "home";
+    }
+    
+    @RequestMapping(value = "/users")
+    public String users(Model model) {
+        List<User> users = userServiceCRUD.findAll();
+        model.addAttribute("users", users);
+        return "users";
     }
 
     @RequestMapping(value = {"/searchuser"}, method = RequestMethod.GET)
@@ -43,7 +46,7 @@ public class HomeController {
     String getUser(@RequestParam(value = "username") String username) {
 
         System.out.println("Search for: " + username);
-        User u = userService.readByUsername(username);
+        User u = userServiceCRUD.readByUsername(username);
         String json = "";
         if (u != null) {
             json = u.toString();
@@ -55,9 +58,10 @@ public class HomeController {
     public String deleteUser(
             @RequestParam(value = "id") String id,
             Model model) {
-
-        userRepository.delete(new String(id));
-        List<User> users = userService.readAll();
+        User userToDelete = new User();
+        userToDelete.setId(id);
+        userServiceCRUD.delete(userToDelete); 
+        List<User> users = userServiceCRUD.findAll(); 
         model.addAttribute("users", users);
         return "redirect:home";
     }
